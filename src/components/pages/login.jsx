@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 import { Toaster, toast } from "sonner";
 import API from "../services/api";
 
