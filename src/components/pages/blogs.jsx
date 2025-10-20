@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { toast } from "sonner";
+import API from "../services/api";
 
 const Blogs = () => {
   const [blogs, setBlogs] = useState([]);
@@ -10,7 +11,7 @@ const Blogs = () => {
     try {
       setLoading(true);
       const token = localStorage.getItem("token");
-      const res = await axios.get("https://arnif-backend.onrender.com/blogs/getBlogs", {
+      const res = await API.get("/blogs/getBlogs", {
         headers: {
           Authorization: `Bearer ${token}`,
         },

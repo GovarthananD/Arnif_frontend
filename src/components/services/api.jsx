@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API = axios.create({
-    URL: "http://localhost:6000",
+    URL: "https://arnifblogs.netlify.app/",
 });
 
 API.interceptors.request.use((req) => {

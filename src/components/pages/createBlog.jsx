@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { toast } from "sonner";
 import { useNavigate } from "react-router-dom";
+import API from "../services/api";
 
 export default function CreateBlog() {
   const navigate = useNavigate();
@@ -30,7 +31,7 @@ export default function CreateBlog() {
 
     setLoading(true);
     try {
-      await axios.post("https://arnif-backend.onrender.com/blogs/createBlog", blogData, {
+      await API.post("/blogs/createBlog", blogData, {
         headers: { Authorization: `Bearer ${token}` },
       });
       toast.success("Blog created successfully!");

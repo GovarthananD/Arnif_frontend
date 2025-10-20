@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Toaster, toast } from "sonner";
+import API from "../services/api";
 
 export default function Login() {
   const [formData, setFormData] = useState({
@@ -20,7 +21,7 @@ export default function Login() {
     setLoading(true);
 
     try {
-      const res = await axios.post("https://arnif-backend.onrender.com/auth/login", formData, {
+      const res = await API.post("/auth/login", formData, {
         withCredentials: false,
       });
 

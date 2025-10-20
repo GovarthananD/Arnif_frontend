@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { toast } from "sonner";
 import { Link } from "react-router-dom";
+import API from "../services/api";
 
 export default function MyBlogs() {
   const token = localStorage.getItem("token");
@@ -36,7 +37,7 @@ export default function MyBlogs() {
  const handleDelete = async (id) => {
   setDeletingId(id);
   try {
-    await axios.delete(`https://arnif-backend.onrender.com/blogs/${id}`, {
+    await API.delete(`/blogs/${id}`, {
       headers: { Authorization: `Bearer ${token}` },
     });
     toast.success("Blog deleted successfully");

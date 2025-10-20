@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
+import API from "../services/api";
 
 export default function EditBlog() {
   const { id } = useParams();
@@ -36,8 +37,8 @@ export default function EditBlog() {
   const handleUpdate = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(
-        `https://arnif-backend.onrender.com/blogs/${id}`,
+      await API.put(
+        `/blogs/${id}`,
         { title, category, content, image },
         { headers: { Authorization: `Bearer ${token}` } }
       );

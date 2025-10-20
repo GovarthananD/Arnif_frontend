@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/auth': {
-        target: 'http://localhost:6000',
+        target: 'https://arnifblogs.netlify.app/',
         changeOrigin: true,
         secure: false,
       },
