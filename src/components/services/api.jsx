@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API = axios.create({
-    URL: "https://arnif-backend.onrender.com",
+    baseURL: "https://arnif-backend.onrender.com",
 });
 
 API.interceptors.request.use((req) => {

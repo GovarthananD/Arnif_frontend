@@ -18,7 +18,7 @@ export default function EditBlog() {
   useEffect(() => {
     const fetchBlog = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/blogs/${id}`, {
+        const res = await API.get(`/blogs/${id}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         setTitle(res.data.title);
@@ -37,8 +37,7 @@ export default function EditBlog() {
   const handleUpdate = async (e) => {
     e.preventDefault();
     try {
-      await API.put(
-        `/blogs/${id}`,
+      await API.put(`/blogs/${id}`,
         { title, category, content, image },
         { headers: { Authorization: `Bearer ${token}` } }
       );
