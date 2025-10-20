@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/auth': {
-        target: 'https://arnifblogs.netlify.app/',
+        target: 'https://arnif-backend.onrender.com',
         changeOrigin: true,
         secure: false,
       },
