@@ -21,7 +21,7 @@ export default function Signup() {
         setLoading(true);
 
         try {
-            const res = await axios.post("https://arnif-backend.onrender.com/auth/signup", formData, {
+            const res = await axios.post("https://arnif-backend.onrender.com/signup", formData, {
                 withCredentials: false, // only set true if using cookies
             });
             toast.success(res.data.message || "Registered successfully!");
