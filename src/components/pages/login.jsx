@@ -32,6 +32,7 @@ export default function Login() {
       setTimeout(() => navigate("/blogs"), 1200);
     } catch (err) {
       if (err.response) {
+        console.log(err);
         toast.error(err.response.data?.message || "Invalid credentials");
       } else if (err.request) {
         toast.error("Network error: Please check your internet connection");
